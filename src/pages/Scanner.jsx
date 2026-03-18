@@ -77,9 +77,7 @@ const QRScanner = ()=>{
                         <p className="welcome">
                             {data['Name']}<br/>
                         </p>
-                        <p className="zone">
-                            ZONE {data['Zone']} 
-                        </p>
+                        {data['Zone']>1?<p className="zone">TABLE {data['Zone']>4? "5 OR 6":data['Zone']}</p>:<p className='zone'>Seat is preassigned. Please lead the guest to designated seat.</p>}
                         {data['Role']? <p className="role"><br/>{data['Role']}</p>:<></>}
                 </section>
             </>:<></>}

@@ -1,5 +1,5 @@
 import { useEffect, useState} from 'react'
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 function Registration(){
     const [SID]= useSearchParams()
@@ -56,9 +56,7 @@ function Registration(){
                                 <p className="welcome">
                                     WELCOME {data['Name']}!<br/>
                                 </p>
-                                <p className="zone">
-                                    ZONE {data['Zone']} 
-                                </p>
+                                {data['Zone']>1?<><p className="zone">TABLE {data['Zone']>4? "5 OR 6":data['Zone']}</p><p>You can sit anywhere in Table {data['Zone']>4? "5 or 6":data['Zone']}</p><Link to={`/Zone?n=${data['Zone']}`}>Click here to navigate to your zone.</Link></>:<p className="zone">Your seat is pre-assigned. We will lead you to your seat.</p>}
                                 {data['Role']? <p className="role"><br/>{data['Role']}</p>:<></>}
                             </section>
                         </>

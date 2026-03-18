@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Outlet} from 'react-router-dom'
 import Home from './pages/Home'
 import Registration from './pages/QRCode'
 import QRScanner from './pages/Scanner'
+import Zone from './pages/Zone'
 
 function App() {
   return(
@@ -12,6 +13,7 @@ function App() {
             <Route index element={<Home />}/>
             <Route path='QRCODE' element={<Registration />}/>
             <Route path='Scanner' element={<QRScanner />}/>
+            <Route path='Zone' element={<Zone />}/>
           </Route>
       </Routes>
     </Router>
